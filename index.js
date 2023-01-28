@@ -15,16 +15,9 @@ const fs = require('fs');
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wtegw345jwerjktjwertkj';
 
-app.use(cors());
+app.use(cors({origin: 'https://client-delta-tan.vercel.app', credentials: true}))
 
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://client-delta-tan.vercel.app')
-  res.header('Access-Control-Allow-Credentials', true)
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-  next()
-})
 
 app.use(express.json());
 app.use(cookieParser());
