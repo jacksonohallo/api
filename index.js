@@ -15,7 +15,7 @@ const fs = require('fs');
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wtegw345jwerjktjwertkj';
 
-app.use(cors({credentials:true,origin:'https://client-delta-tan.vercel.app/'}));
+app.use(cors());
 
 app.use(express.json());
 app.use(cookieParser());
